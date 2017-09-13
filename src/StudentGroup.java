@@ -11,6 +11,15 @@ import java.util.Date;
  * DO NOT PUT any classes into packages
  *
  */
+class MyException extends Exception{
+   String akh;
+   MyException(String akhi) {
+	akh=akhi;
+   }
+   public String toString(){ 
+	return ("Exception Occurred: "+akh) ;
+   }
+}
 public class StudentGroup implements StudentArrayOperation {
 
 	private Student[] students;
@@ -25,44 +34,82 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student[] getStudents() {
-		// Add your implementation here
-		return null;
+		return students;
 	}
 
 	@Override
 	public void setStudents(Student[] students) {
-		// Add your implementation here
+		for(int i:students)
+		{
+			if(i.students==null)
+			{
+				try{
+				throw new MyException("IllegalArgumentException");
+				}
+				catch(MyException e)
+				{System.out.println(e);}
+		}
+		
 	}
 
 	@Override
 	public Student getStudent(int index) {
-		// Add your implementation here
-		return null;
+			if(index==0 || index>=students.length)
+			{
+				try{
+				throw new MyException("IllegalArgumentException");
+				}
+				catch(MyException e)
+				{System.out.println(e);}
+			}
 	}
 
 	@Override
 	public void setStudent(Student student, int index) {
-		// Add your implementation here
+		if(index==0 || index>=students.length || student==null)
+			{
+				try{
+				throw new MyException("IllegalArgumentException");
+				}
+				catch(MyException e)
+				{System.out.println(e);}
+			}
+		
 	}
 
 	@Override
 	public void addFirst(Student student) {
-		// Add your implementation here
+	
 	}
 
 	@Override
 	public void addLast(Student student) {
-		// Add your implementation here
+		if(index<0 || index>=students.length)
+			{
 	}
 
 	@Override
 	public void add(Student student, int index) {
-		// Add your implementation here
+		if(index==0 || index>=students.length)
+			{
+				try{
+				throw new MyException("IllegalArgumentException");
+				}
+				catch(MyException e)
+				{System.out.println(e);}
+			}
 	}
 
 	@Override
 	public void remove(int index) {
-		// Add your implementation here
+		if(index<0 || index>=students.length)
+			{
+				try{
+				throw new MyException("IllegalArgumentException");
+				}
+				catch(MyException e)
+				{System.out.println(e);}
+			}
 	}
 
 	@Override
@@ -82,12 +129,26 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void removeToIndex(int index) {
-		// Add your implementation here
+		if(index<0 || index>=students.length)
+			{
+				try{
+				throw new MyException("IllegalArgumentException");
+				}
+				catch(MyException e)
+				{System.out.println(e);}
+			}
 	}
 
 	@Override
 	public void removeToElement(Student student) {
-		// Add your implementation here
+	if(index<0 || index>=students.length)
+			{
+				try{
+				throw new MyException("IllegalArgumentException");
+				}
+				catch(MyException e)
+				{System.out.println(e);}
+			}
 	}
 
 	@Override
@@ -97,8 +158,14 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student[] getByBirthDate(Date date) {
-		// Add your implementation here
-		return null;
+		if(index<0 || index>=students.length)
+			{
+				try{
+				throw new MyException("IllegalArgumentException");
+				}
+				catch(MyException e)
+				{System.out.println(e);}
+			}
 	}
 
 	@Override
@@ -115,8 +182,14 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public int getCurrentAgeByDate(int indexOfStudent) {
-		// Add your implementation here
-		return 0;
+		if(index<0 || index>=students.length)
+			{
+				try{
+				throw new MyException("IllegalArgumentException");
+				}
+				catch(MyException e)
+				{System.out.println(e);}
+			}
 	}
 
 	@Override
