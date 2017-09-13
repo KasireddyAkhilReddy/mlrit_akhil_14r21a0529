@@ -25,38 +25,24 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student[] getStudents() {
-		for(int i:students)
-		{
-			if(i.id!=null)
-			return i;
-		}
+		// Add your implementation here
 		return null;
 	}
 
 	@Override
 	public void setStudents(Student[] students) {
-		for(int i:students)
-		{
-			if(i==null)
-			{
-				System.out.println("IllegalArgumentException");}	
+		// Add your implementation here
 	}
 
 	@Override
 	public Student getStudent(int index) {
-		if(index==0 || index>=students.length )
-		{
-		System.out.println("IllegalArgumentException");
-		}
+		// Add your implementation here
 		return null;
 	}
 
 	@Override
 	public void setStudent(Student student, int index) {
-		if(index==0 || index>=students.length )
-		{
-		System.out.println("IllegalArgumentException");
-		}
+		// Add your implementation here
 	}
 
 	@Override
@@ -129,16 +115,14 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public int getCurrentAgeByDate(int indexOfStudent) {
+		// Add your implementation here
 		return 0;
 	}
 
 	@Override
 	public Student[] getStudentsByAge(int age) {
-		for(int i:students)
-		{
-			if(i.age==age)
-			{
-				return i;}
+		// Add your implementation here
+		return null;
 	}
 
 	@Override
@@ -149,7 +133,7 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student getNextStudent(Student student) {
-		if(student==null)
-			System.out.println("IllegalArgumentException");
+		// Add your implementation here
+		return null;
 	}
 }
